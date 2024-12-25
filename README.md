@@ -102,6 +102,14 @@ output.loss.backward()
 pred_labels = torch.argmax(output.logits, dim=-1)
 ```
 
+We've uploaded two backward models ourselves:
+
+| Model ID | Vocab | #parameters | URL |
+|----------|-------|-------------|-----|
+| `hitachi-nlp/backward-llm-llama2-vocab` | [`meta-llama/Llama-2-7b-hf`](https://huggingface.co/meta-llama/Llama-2-7b-hf) | 124M |  https://huggingface.co/hitachi-nlp/backward-llm-llama2-vocab |
+| `hitachi-nlp/backward-llm-gpt2-vocab` | [`openai-community/gpt2`](https://huggingface.co/openai-community/gpt2) | 124M | https://huggingface.co/hitachi-nlp/backward-llm-gpt2-vocab |
+
+
 ## Reproduction of the experiments
 
 - [experiments/train_backward](./experiments/train_backward/)
