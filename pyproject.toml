@@ -1,0 +1,36 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "backward_llm"
+version = "0.0.1"
+dependencies = [
+  "transformers>=4.39.0, ==4.*",
+# possibly some bug with torch 2.5.*
+  "torch>=2.3.0, ==2.*, !=2.5.*",
+  "datasets>=2.14.5, ==2.*"
+]
+requires-python = ">=3.9"
+authors = [
+    {name = "Takumi Goto"}
+]
+description = "Code"
+readme = "README.md"
+license = {file = "LICENSE"}
+
+[project.optional-dependencies]
+dev = [
+    "pytest >= 6.0.0",
+    "ruff >= 0.8.2"
+]
+
+[tool.setuptools]
+packages = ["backward_llm"]
+
+[tool.pytest.ini_options]
+minversion = "6.0"
+addopts = "-v"
+testpaths = [
+    "tests"
+]
